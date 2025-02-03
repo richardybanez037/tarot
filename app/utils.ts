@@ -1,0 +1,1 @@
+export const zeroStartRandom = (last: number) => Math.floor(Math.random() * last)
