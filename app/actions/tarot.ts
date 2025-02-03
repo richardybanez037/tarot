@@ -20,7 +20,7 @@ export const all = async () => {
 export const cardOrientationNumber = (): number => zeroStartRandom(2) //0 to 1
 export const randomTarotCardNumber = (): number => zeroStartRandom(NUMBER_OF_CARDS) //0 to 78
 
-export const setCardsToDraw = (prevState, formData: FormData) => {
+export const setCardsToDraw = (prevState: unknown, formData: FormData) => {
   const numberOfCards = formData.get('numberOfCards')
   if(!numberOfCards) return 0
   if(numberOfCards === 'NaN') return 0

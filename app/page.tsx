@@ -41,10 +41,10 @@ export default function Home() {
     <div>
       <header className="flex justify-center">
         <form action={formAction} className="flex flex-col gap-2">
-          <h1>Select number of cards to draw:</h1>
+          <h1 className="text-white">Select number of cards to draw:</h1>
           <div className="flex gap-2">
             <input
-              className="border p-4 w-20"
+              className="border border-yellow-600 p-4 bg-green-900 text-white rounded-lg"
               type="number"
               name="numberOfCards"
               max={78}
@@ -52,10 +52,12 @@ export default function Home() {
               value={numberOfCards}
               onChange={(e) => setNumberOfCards(parseInt(e.target.value))}
             />
-            <button className="border p-4">Draw</button>
+            <button className="border border-yellow-600 p-4 bg-green-900 text-white rounded-lg hover:bg-yellow-600 duration-300">
+              Draw
+            </button>
             <button
               type="button"
-              className="border p-4"
+              className="border border-yellow-600 p-4 bg-green-900 text-white rounded-lg hover:bg-yellow-600 duration-300"
               onClick={() => setShowCards([])}
             >
               Clear
@@ -63,7 +65,7 @@ export default function Home() {
           </div>
         </form>
       </header>
-      <main className="flex gap-2 flex-wrap m-10">
+      <main className="flex gap-3 flex-wrap m-4">
         {showCards.length > 0 &&
           showCards.map((card: ICard) => (
             <Card key={card.name_short} card={card} />
