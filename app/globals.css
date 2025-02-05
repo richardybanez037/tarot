@@ -10,9 +10,9 @@
 
 html {
   --s: 47px; /* control the size*/
-  --c1: #1d3b0c;
-  --c2: #26461b;
-  --c3: #1a3211;
+  --c1: #0d1d03;
+  --c2: #081b01;
+  --c3: #081702;
   
   --_g: 0 120deg,#0000 0;
   background:
@@ -24,4 +24,9 @@ html {
     conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
     conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
   background-size: calc(var(--s)*sqrt(3)) var(--s);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }

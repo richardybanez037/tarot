@@ -1,5 +1,5 @@
 import { ICard } from "@/app/definitions";
-import { getCardImage } from "../actions/tarot";
+import { getCardDetail, getCardImage } from "../actions/tarot";
 
 export function Card({ card }: { card: ICard }) {
   const cardImage =
@@ -8,12 +8,13 @@ export function Card({ card }: { card: ICard }) {
       : undefined; // Use `undefined` instead of `null`
 
   return (
-    <div className="w-52 cursor-pointer border-yellow-600 border border-2 rounded-sm bg-white">
+    <div className="w-40 rounded-sm bg-green-800 text-white bg-opacity-20 hover:scale-[1.02] duration-200">
       <div>
         {cardImage && (
           <img className="w-full" src={cardImage} alt="tarot card image" />
         )}
-        <p className="px-2">{card?.name}</p>
+        <p className="px-2 bg-yellow-900">{card?.name}</p>
+        <p className="px-2 text-sm">{getCardDetail(card.name_short)}</p>
       </div>
     </div>
   );
