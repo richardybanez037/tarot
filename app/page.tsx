@@ -40,7 +40,7 @@ export default function Home() {
   }, [isPending]);
   return (
     <div>
-      <header className="flex justify-center bg-black bg-opacity-10 backdrop-blur-sm py-10 border-b border-green-950">
+      <header className="flex justify-center bg-black bg-opacity-10 backdrop-blur-sm py-7 border-b border-green-950">
         <form action={formAction} className="flex flex-col gap-2">
           <h1 className="text-white">Draw your cards</h1>
           <div className="flex gap-2 flex-wrap">
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </form>
       </header>
-      <main className="flex justify-center gap-3 flex-wrap m-4">
+      <main className="flex justify-center gap-3 flex-wrap m-4 my-7">
         {showCards.length > 0 &&
           showCards.map((card: ICard) => (
             <Card key={card.name_short} card={card} />
