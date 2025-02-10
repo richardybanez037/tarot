@@ -4,6 +4,7 @@ import { Card } from "./components/card";
 import { ICard } from "./definitions";
 import { all, randomTarotCardNumber, setCardsToDraw } from "./actions/tarot";
 import { NUMBER_OF_CARDS } from "./constants";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   const [cards, setCards] = useState([]);
@@ -38,10 +39,14 @@ export default function Home() {
       setShowCards(drawnCards);
     }
   }, [isPending]);
+
+  const toGuidePage = () => {
+    redirect("/guide");
+  };
   return (
     <div>
       <header className="flex justify-center bg-black bg-opacity-10 backdrop-blur-sm py-7 border-b border-green-950">
-        <form action={formAction} className="flex flex-col gap-2">
+        <form action={formAction} className="flex flex-col gap-2 px-4">
           <h1 className="text-white">Draw your cards</h1>
           <div className="flex gap-2 flex-wrap">
             <div className="flex">
@@ -84,6 +89,13 @@ export default function Home() {
               onClick={() => setShowCards([])}
             >
               Clear
+            </button>
+            <button
+              type="button"
+              className="p-4 bg-green-900 text-white rounded-md hover:bg-yellow-700 duration-300"
+              onClick={toGuidePage}
+            >
+              Tarot card guide
             </button>
           </div>
         </form>
